@@ -16,14 +16,44 @@ namespace TuneTastic
         {
             InitializeComponent();
         }
+        private Form activeForm = null;
+        private void openChildFormInPanel(Form childForm)
+        {
+            if (activeForm != null)
+                activeForm.Close();
+            activeForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            panel1.Controls.Add(childForm);
+            panel1.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
+        }
 
         private void login_Load(object sender, EventArgs e)
         {
-            txtEmail.Text = "Email";
-            txtPassword.Text = "Password";
-            txtEmail.ForeColor = Color.LightGray;
-            txtPassword.ForeColor = Color.LightGray;
+            
+            rbLogin.FlatAppearance.BorderSize = 0;
+            rbLogin.FlatStyle = FlatStyle.Flat;
+            rbLogin.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            rbLogin.FlatAppearance.CheckedBackColor = Color.Transparent;
 
+            rbRegister.FlatAppearance.BorderSize = 0;
+            rbRegister.FlatStyle = FlatStyle.Flat;
+            rbRegister.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            rbRegister.FlatAppearance.CheckedBackColor = Color.Transparent;
+
+            if (rbLogin.Checked == true)
+            {
+                rbLogin.FlatAppearance.BorderColor = Color.Blue;
+                rbLogin.Font = new Font(rbLogin.Font, FontStyle.Underline);
+            }
+            else
+            {
+                rbLogin.FlatAppearance.BorderColor = SystemColors.ControlDark;
+                rbLogin.Font = new Font(rbLogin.Font, FontStyle.Regular);
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -38,37 +68,56 @@ namespace TuneTastic
 
         private void txtEmail_Enter(object sender, EventArgs e)
         {
-            if (txtEmail.Text == "Email")
-            {
-                txtEmail.Text = "";
-                txtEmail.ForeColor = Color.Black;
-            }
+            
         }
 
         private void txtEmail_Leave(object sender, EventArgs e)
         {
-            if (txtEmail.Text == "")
-            {
-                txtEmail.Text = "Email";
-                txtEmail.ForeColor = Color.LightGray;
-            }
+            
         }
 
         private void txtPassword_Enter(object sender, EventArgs e)
         {
-            if (txtPassword.Text == "Password")
-            {
-                txtPassword.Text = "";
-                txtPassword.ForeColor = Color.Black;
-            }
+            
         }
 
         private void txtPassword_Leave(object sender, EventArgs e)
         {
-            if (txtPassword.Text == "")
+            
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            //underline
+            RadioButton radioButton = (RadioButton)sender;
+            if (rbLogin.Checked == true)
             {
-                txtPassword.Text = "Password";
-                txtPassword.ForeColor = Color.LightGray;
+                rbLogin.FlatAppearance.BorderColor = Color.Blue;
+                rbLogin.Font = new Font(rbLogin.Font, FontStyle.Underline);
+            }
+            else
+            {
+                rbLogin.FlatAppearance.BorderColor = SystemColors.ControlDark;
+                rbLogin.Font = new Font(rbLogin.Font, FontStyle.Regular);
+            }
+
+            //change panel
+
+        }
+
+        private void rbRegister_CheckedChanged(object sender, EventArgs e)
+        {
+            RadioButton radioButton = (RadioButton)sender;
+
+            if (rbRegister.Checked)
+            {
+                rbRegister.FlatAppearance.BorderColor = Color.Blue;
+                rbRegister.Font = new Font(rbRegister.Font, FontStyle.Underline);
+            }
+            else
+            {
+                rbRegister.FlatAppearance.BorderColor = SystemColors.ControlDark;
+                rbRegister.Font = new Font(rbRegister.Font, FontStyle.Regular);
             }
         }
     }

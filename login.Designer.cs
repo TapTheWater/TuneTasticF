@@ -30,13 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(login));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.txtEmail = new System.Windows.Forms.RichTextBox();
-            this.txtPassword = new System.Windows.Forms.RichTextBox();
+            this.rbLogin = new System.Windows.Forms.RadioButton();
+            this.rbRegister = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -50,56 +47,52 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(763, 170);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(88, 39);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Login";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(893, 170);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(88, 39);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Register";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.txtPassword);
-            this.panel1.Controls.Add(this.txtEmail);
             this.panel1.Location = new System.Drawing.Point(737, 224);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(267, 329);
             this.panel1.TabIndex = 0;
             // 
-            // txtEmail
+            // rbLogin
             // 
-            this.txtEmail.BackColor = System.Drawing.SystemColors.InfoText;
-            this.txtEmail.Location = new System.Drawing.Point(26, 36);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(218, 25);
-            this.txtEmail.TabIndex = 0;
-            this.txtEmail.Text = "";
-            this.txtEmail.Enter += new System.EventHandler(this.txtEmail_Enter);
-            this.txtEmail.Leave += new System.EventHandler(this.txtEmail_Leave);
+            this.rbLogin.Appearance = System.Windows.Forms.Appearance.Button;
+            this.rbLogin.AutoSize = true;
+            this.rbLogin.BackColor = System.Drawing.Color.Black;
+            this.rbLogin.Checked = true;
+            this.rbLogin.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.rbLogin.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.rbLogin.FlatAppearance.BorderSize = 0;
+            this.rbLogin.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.rbLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbLogin.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.rbLogin.Location = new System.Drawing.Point(766, 174);
+            this.rbLogin.Name = "rbLogin";
+            this.rbLogin.Size = new System.Drawing.Size(70, 35);
+            this.rbLogin.TabIndex = 2;
+            this.rbLogin.TabStop = true;
+            this.rbLogin.Text = "Login";
+            this.rbLogin.UseVisualStyleBackColor = false;
+            this.rbLogin.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
-            // txtPassword
+            // rbRegister
             // 
-            this.txtPassword.BackColor = System.Drawing.SystemColors.MenuText;
-            this.txtPassword.Location = new System.Drawing.Point(26, 114);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(218, 25);
-            this.txtPassword.TabIndex = 1;
-            this.txtPassword.Text = "";
-            this.txtPassword.Enter += new System.EventHandler(this.txtPassword_Enter);
-            this.txtPassword.Leave += new System.EventHandler(this.txtPassword_Leave);
+            this.rbRegister.Appearance = System.Windows.Forms.Appearance.Button;
+            this.rbRegister.AutoSize = true;
+            this.rbRegister.BackColor = System.Drawing.Color.Black;
+            this.rbRegister.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.rbRegister.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.rbRegister.FlatAppearance.BorderSize = 4;
+            this.rbRegister.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.rbRegister.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbRegister.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.rbRegister.Location = new System.Drawing.Point(890, 174);
+            this.rbRegister.Name = "rbRegister";
+            this.rbRegister.Size = new System.Drawing.Size(93, 35);
+            this.rbRegister.TabIndex = 3;
+            this.rbRegister.Text = "Register";
+            this.rbRegister.UseVisualStyleBackColor = false;
+            this.rbRegister.CheckedChanged += new System.EventHandler(this.rbRegister_CheckedChanged);
             // 
             // login
             // 
@@ -108,25 +101,23 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(1164, 604);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.rbRegister);
+            this.Controls.Add(this.rbLogin);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.panel1);
             this.Name = "login";
             this.Text = "login";
             this.Load += new System.EventHandler(this.login_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.RichTextBox txtPassword;
-        private System.Windows.Forms.RichTextBox txtEmail;
+        private System.Windows.Forms.RadioButton rbLogin;
+        private System.Windows.Forms.RadioButton rbRegister;
     }
 }
