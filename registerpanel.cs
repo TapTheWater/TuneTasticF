@@ -16,5 +16,15 @@ namespace TuneTastic
         {
             InitializeComponent();
         }
+
+        private void txtEmail_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtEmail_Leave(object sender, EventArgs e)
+        {
+
+        }
     }
 }

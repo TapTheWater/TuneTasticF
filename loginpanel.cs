@@ -19,15 +19,15 @@ namespace TuneTastic
 
         private void loginpanel_Load(object sender, EventArgs e)
         {
-            txtEmail.Text = "Email";
+            txtEmail.Text = "Email/Username";
             txtPass.Text = "Password";
-            txtEmail.ForeColor = Color.LightGray;
-            txtPass.ForeColor = Color.LightGray;
+            txtEmail.ForeColor = Color.Gray;
+            txtPass.ForeColor = Color.Gray;
         }
 
         private void txtEmail_Enter(object sender, EventArgs e)
         {
-            if (txtEmail.Text == "Email")
+            if (txtEmail.Text == "Email/Username")
             {
                 txtEmail.Text = "";
                 txtEmail.ForeColor = Color.Black;
@@ -38,8 +38,8 @@ namespace TuneTastic
         {
             if (txtEmail.Text == "")
             {
-                txtEmail.Text = "Email";
-                txtEmail.ForeColor = Color.LightGray;
+                txtEmail.Text = "Email/Username";
+                txtEmail.ForeColor = Color.Gray;
             }
         }
 
@@ -57,8 +57,13 @@ namespace TuneTastic
             if (txtPass.Text == "")
             {
                 txtPass.Text = "Password";
-                txtPass.ForeColor = Color.LightGray;
+                txtPass.ForeColor = Color.Gray;
             }
+        }
+
+        private void txtEmail_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

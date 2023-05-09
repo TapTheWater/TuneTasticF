@@ -54,6 +54,8 @@ namespace TuneTastic
                 rbLogin.FlatAppearance.BorderColor = SystemColors.ControlDark;
                 rbLogin.Font = new Font(rbLogin.Font, FontStyle.Regular);
             }
+
+            rbLogin.Checked = true;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -102,7 +104,11 @@ namespace TuneTastic
             }
 
             //change panel
-
+            if (rbLogin.Checked == true)
+            {
+                openChildFormInPanel(new loginpanel());
+            }
+            
         }
 
         private void rbRegister_CheckedChanged(object sender, EventArgs e)
@@ -118,6 +124,12 @@ namespace TuneTastic
             {
                 rbRegister.FlatAppearance.BorderColor = SystemColors.ControlDark;
                 rbRegister.Font = new Font(rbRegister.Font, FontStyle.Regular);
+            }
+
+            // change panel
+            if (rbRegister.Checked == true)
+            {
+                openChildFormInPanel(new registerpanel());
             }
         }
     }
