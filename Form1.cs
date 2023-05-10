@@ -17,9 +17,29 @@ namespace TuneTastic
             InitializeComponent();
         }
 
+ Main_Screen
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+
+ master
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }
+ Main_Screen
+
+        private void btn_play_Click(object sender, EventArgs e)
+        {
+          
+        }
+ master
     }
 }
