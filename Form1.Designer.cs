@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+ Main_Screen
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panel1 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
@@ -385,20 +386,29 @@
             this.label4.TabIndex = 1;
             this.label4.Text = "Suggestions based on what you’re liked or played";
             // 
+
+            this.SuspendLayout();
+            // 
+ master
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(842, 553);
+ Main_Screen
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(2);
+
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+ master
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
+ Main_Screen
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -410,11 +420,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+
+ master
             this.ResumeLayout(false);
 
         }
 
         #endregion
+ Main_Screen
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
@@ -438,6 +451,8 @@
         private System.Windows.Forms.Button btn_play;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Label label4;
+
+ master
     }
 }
 
