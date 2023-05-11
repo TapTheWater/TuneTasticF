@@ -65,5 +65,12 @@ namespace TuneTastic
         {
 
         }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            Form pindah = new Form1();
+            pindah.Show();
+            this.Hide();
+        }
     }
 }
