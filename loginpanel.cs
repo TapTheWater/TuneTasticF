@@ -68,6 +68,7 @@ namespace TuneTastic
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+
             string email = txtEmail.Text;
             string password = txtPass.Text;
 
@@ -113,7 +114,5 @@ namespace TuneTastic
                 // Show an error message or take appropriate action
             }
         }
-
-
     }
 }
