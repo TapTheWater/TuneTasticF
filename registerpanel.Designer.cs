@@ -43,6 +43,8 @@
             this.txtPass.Size = new System.Drawing.Size(256, 25);
             this.txtPass.TabIndex = 7;
             this.txtPass.Text = "";
+            this.txtPass.Enter += new System.EventHandler(this.txtPass_Enter);
+            this.txtPass.Leave += new System.EventHandler(this.txtPass_Leave);
             // 
             // txtEmail
             // 
@@ -75,6 +77,8 @@
             this.txtUsername.Size = new System.Drawing.Size(256, 25);
             this.txtUsername.TabIndex = 8;
             this.txtUsername.Text = "";
+            this.txtUsername.Enter += new System.EventHandler(this.txtUsername_Enter);
+            this.txtUsername.Leave += new System.EventHandler(this.txtUsername_Leave);
             // 
             // registerpanel
             // 
@@ -88,6 +92,7 @@
             this.Controls.Add(this.btnLogin);
             this.Name = "registerpanel";
             this.Text = "registerpanel";
+            this.Load += new System.EventHandler(this.registerpanel_Load);
             this.ResumeLayout(false);
 
         }

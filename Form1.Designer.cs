@@ -74,9 +74,10 @@
             this.btn_playlist.ForeColor = System.Drawing.Color.White;
             this.btn_playlist.Image = ((System.Drawing.Image)(resources.GetObject("btn_playlist.Image")));
             this.btn_playlist.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btn_playlist.Location = new System.Drawing.Point(0, 148);
+            this.btn_playlist.Location = new System.Drawing.Point(0, 182);
+            this.btn_playlist.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_playlist.Name = "btn_playlist";
-            this.btn_playlist.Size = new System.Drawing.Size(153, 48);
+            this.btn_playlist.Size = new System.Drawing.Size(204, 59);
             this.btn_playlist.TabIndex = 3;
             this.btn_playlist.Text = "       Playlists";
             this.btn_playlist.UseVisualStyleBackColor = false;
@@ -93,9 +94,9 @@
             this.panel2.Controls.Add(this.btn_home);
             this.panel2.Font = new System.Drawing.Font("Iceberg", 12F);
             this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(153, 553);
+            this.panel2.Size = new System.Drawing.Size(204, 681);
             this.panel2.TabIndex = 4;
             // 
             // btn_friend
@@ -110,9 +111,10 @@
             this.btn_friend.ForeColor = System.Drawing.Color.White;
             this.btn_friend.Image = ((System.Drawing.Image)(resources.GetObject("btn_friend.Image")));
             this.btn_friend.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btn_friend.Location = new System.Drawing.Point(0, 409);
+            this.btn_friend.Location = new System.Drawing.Point(0, 504);
+            this.btn_friend.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_friend.Name = "btn_friend";
-            this.btn_friend.Size = new System.Drawing.Size(153, 48);
+            this.btn_friend.Size = new System.Drawing.Size(204, 59);
             this.btn_friend.TabIndex = 6;
             this.btn_friend.Text = "      Friends";
             this.btn_friend.UseVisualStyleBackColor = false;
@@ -129,9 +131,10 @@
             this.btn_setting.ForeColor = System.Drawing.Color.White;
             this.btn_setting.Image = ((System.Drawing.Image)(resources.GetObject("btn_setting.Image")));
             this.btn_setting.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btn_setting.Location = new System.Drawing.Point(0, 457);
+            this.btn_setting.Location = new System.Drawing.Point(0, 563);
+            this.btn_setting.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_setting.Name = "btn_setting";
-            this.btn_setting.Size = new System.Drawing.Size(153, 48);
+            this.btn_setting.Size = new System.Drawing.Size(204, 59);
             this.btn_setting.TabIndex = 5;
             this.btn_setting.Text = "       Settings";
             this.btn_setting.UseVisualStyleBackColor = false;
@@ -148,9 +151,10 @@
             this.btn_profile.ForeColor = System.Drawing.Color.White;
             this.btn_profile.Image = ((System.Drawing.Image)(resources.GetObject("btn_profile.Image")));
             this.btn_profile.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btn_profile.Location = new System.Drawing.Point(0, 505);
+            this.btn_profile.Location = new System.Drawing.Point(0, 622);
+            this.btn_profile.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_profile.Name = "btn_profile";
-            this.btn_profile.Size = new System.Drawing.Size(153, 48);
+            this.btn_profile.Size = new System.Drawing.Size(204, 59);
             this.btn_profile.TabIndex = 4;
             this.btn_profile.Text = "     Profile";
             this.btn_profile.UseVisualStyleBackColor = false;
@@ -167,9 +171,10 @@
             this.button3.ForeColor = System.Drawing.Color.White;
             this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
             this.button3.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.button3.Location = new System.Drawing.Point(0, 100);
+            this.button3.Location = new System.Drawing.Point(0, 123);
+            this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(153, 48);
+            this.button3.Size = new System.Drawing.Size(204, 59);
             this.button3.TabIndex = 2;
             this.button3.Text = "        Favorite";
             this.button3.UseVisualStyleBackColor = false;
@@ -186,9 +191,10 @@
             this.btn_search.ForeColor = System.Drawing.Color.White;
             this.btn_search.Image = ((System.Drawing.Image)(resources.GetObject("btn_search.Image")));
             this.btn_search.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btn_search.Location = new System.Drawing.Point(0, 52);
+            this.btn_search.Location = new System.Drawing.Point(0, 64);
+            this.btn_search.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_search.Name = "btn_search";
-            this.btn_search.Size = new System.Drawing.Size(153, 48);
+            this.btn_search.Size = new System.Drawing.Size(204, 59);
             this.btn_search.TabIndex = 1;
             this.btn_search.Text = "      Search";
             this.btn_search.UseVisualStyleBackColor = false;
@@ -207,8 +213,9 @@
             this.btn_home.Image = ((System.Drawing.Image)(resources.GetObject("btn_home.Image")));
             this.btn_home.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.btn_home.Location = new System.Drawing.Point(0, 0);
+            this.btn_home.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_home.Name = "btn_home";
-            this.btn_home.Size = new System.Drawing.Size(153, 52);
+            this.btn_home.Size = new System.Drawing.Size(204, 64);
             this.btn_home.TabIndex = 0;
             this.btn_home.Text = "    Home";
             this.btn_home.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -222,6 +229,7 @@
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(689, 429);
+
             this.panel1.TabIndex = 3;
             // 
             // panel3
@@ -382,13 +390,13 @@
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(842, 553);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
+            this.ClientSize = new System.Drawing.Size(1123, 681);
             this.Controls.Add(this.panel3);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panel2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Form1";
