@@ -51,7 +51,6 @@ namespace TuneTastic
         {
 
         }
-        private login parentForm;
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
@@ -91,7 +90,6 @@ namespace TuneTastic
                                     ParentForm.Hide(); // Hide the parent form instead of closing it
                                 };
                                 form1.Show();
-
                             }
                             else
                             {
