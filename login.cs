@@ -132,5 +132,11 @@ namespace TuneTastic
                 openChildFormInPanel(new registerpanel());
             }
         }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
+        
     }
 }

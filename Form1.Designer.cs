@@ -55,7 +55,7 @@
             this.btn_playlist.Image = ((System.Drawing.Image)(resources.GetObject("btn_playlist.Image")));
             this.btn_playlist.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.btn_playlist.Location = new System.Drawing.Point(0, 182);
-            this.btn_playlist.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_playlist.Margin = new System.Windows.Forms.Padding(4);
             this.btn_playlist.Name = "btn_playlist";
             this.btn_playlist.Size = new System.Drawing.Size(204, 59);
             this.btn_playlist.TabIndex = 3;
@@ -92,7 +92,7 @@
             this.btn_friend.Image = ((System.Drawing.Image)(resources.GetObject("btn_friend.Image")));
             this.btn_friend.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.btn_friend.Location = new System.Drawing.Point(0, 504);
-            this.btn_friend.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_friend.Margin = new System.Windows.Forms.Padding(4);
             this.btn_friend.Name = "btn_friend";
             this.btn_friend.Size = new System.Drawing.Size(204, 59);
             this.btn_friend.TabIndex = 6;
@@ -112,7 +112,7 @@
             this.btn_setting.Image = ((System.Drawing.Image)(resources.GetObject("btn_setting.Image")));
             this.btn_setting.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.btn_setting.Location = new System.Drawing.Point(0, 563);
-            this.btn_setting.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_setting.Margin = new System.Windows.Forms.Padding(4);
             this.btn_setting.Name = "btn_setting";
             this.btn_setting.Size = new System.Drawing.Size(204, 59);
             this.btn_setting.TabIndex = 5;
@@ -132,7 +132,7 @@
             this.btn_profile.Image = ((System.Drawing.Image)(resources.GetObject("btn_profile.Image")));
             this.btn_profile.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.btn_profile.Location = new System.Drawing.Point(0, 622);
-            this.btn_profile.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_profile.Margin = new System.Windows.Forms.Padding(4);
             this.btn_profile.Name = "btn_profile";
             this.btn_profile.Size = new System.Drawing.Size(204, 59);
             this.btn_profile.TabIndex = 4;
@@ -152,7 +152,7 @@
             this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
             this.button3.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.button3.Location = new System.Drawing.Point(0, 123);
-            this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button3.Margin = new System.Windows.Forms.Padding(4);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(204, 59);
             this.button3.TabIndex = 2;
@@ -172,7 +172,7 @@
             this.btn_search.Image = ((System.Drawing.Image)(resources.GetObject("btn_search.Image")));
             this.btn_search.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.btn_search.Location = new System.Drawing.Point(0, 64);
-            this.btn_search.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_search.Margin = new System.Windows.Forms.Padding(4);
             this.btn_search.Name = "btn_search";
             this.btn_search.Size = new System.Drawing.Size(204, 59);
             this.btn_search.TabIndex = 1;
@@ -193,7 +193,7 @@
             this.btn_home.Image = ((System.Drawing.Image)(resources.GetObject("btn_home.Image")));
             this.btn_home.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.btn_home.Location = new System.Drawing.Point(0, 0);
-            this.btn_home.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_home.Margin = new System.Windows.Forms.Padding(4);
             this.btn_home.Name = "btn_home";
             this.btn_home.Size = new System.Drawing.Size(204, 64);
             this.btn_home.TabIndex = 0;
@@ -232,6 +232,7 @@
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
