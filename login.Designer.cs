@@ -42,7 +42,7 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(848, 31);
+            this.pictureBox1.Location = new System.Drawing.Point(855, 30);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(202, 125);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -65,7 +65,7 @@
             this.rbLogin.Cursor = System.Windows.Forms.Cursors.Hand;
             this.rbLogin.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.rbLogin.FlatAppearance.BorderSize = 0;
-            this.rbLogin.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.rbLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rbLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbLogin.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.rbLogin.Location = new System.Drawing.Point(848, 178);
@@ -84,12 +84,12 @@
             this.rbRegister.Cursor = System.Windows.Forms.Cursors.Hand;
             this.rbRegister.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.rbRegister.FlatAppearance.BorderSize = 4;
-            this.rbRegister.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.rbRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rbRegister.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbRegister.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.rbRegister.Location = new System.Drawing.Point(971, 178);
+            this.rbRegister.Location = new System.Drawing.Point(971, 175);
             this.rbRegister.Name = "rbRegister";
-            this.rbRegister.Size = new System.Drawing.Size(93, 35);
+            this.rbRegister.Size = new System.Drawing.Size(101, 43);
             this.rbRegister.TabIndex = 3;
             this.rbRegister.Text = "Register";
             this.rbRegister.UseVisualStyleBackColor = false;

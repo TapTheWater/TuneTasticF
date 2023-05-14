@@ -36,13 +36,13 @@ namespace TuneTastic
             
             rbLogin.FlatAppearance.BorderSize = 0;
             rbLogin.FlatStyle = FlatStyle.Flat;
-            rbLogin.FlatAppearance.MouseOverBackColor = Color.Transparent;
-            rbLogin.FlatAppearance.CheckedBackColor = Color.Transparent;
+            rbLogin.FlatAppearance.CheckedBackColor = Color.Black;
+            rbLogin.FlatAppearance.MouseDownBackColor = Color.Black;
 
             rbRegister.FlatAppearance.BorderSize = 0;
             rbRegister.FlatStyle = FlatStyle.Flat;
-            rbRegister.FlatAppearance.MouseOverBackColor = Color.Transparent;
-            rbRegister.FlatAppearance.CheckedBackColor = Color.Transparent;
+            rbRegister.FlatAppearance.CheckedBackColor = Color.Black;
+            rbRegister.FlatAppearance.MouseDownBackColor = Color.Black;
 
             if (rbLogin.Checked == true)
             {
