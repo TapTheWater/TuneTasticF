@@ -41,9 +41,9 @@
             // btnLogin
             // 
             this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin.Location = new System.Drawing.Point(241, 141);
+            this.btnLogin.Location = new System.Drawing.Point(204, 123);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(86, 42);
+            this.btnLogin.Size = new System.Drawing.Size(64, 34);
             this.btnLogin.TabIndex = 2;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = true;
@@ -93,45 +93,37 @@
             this.txtEmail.BorderRadius = 15;
             this.txtEmail.BorderSize = 2;
             this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmail.ForeColor = System.Drawing.Color.Black;
             this.txtEmail.Location = new System.Drawing.Point(34, 39);
-            this.txtEmail.Margin = new System.Windows.Forms.Padding(4);
-            this.txtEmail.Multiline = false;
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Padding = new System.Windows.Forms.Padding(40, 7, 10, 7);
-            this.txtEmail.PasswordChar = false;
-            this.txtEmail.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.txtEmail.PlaceholderText = "Email";
-            this.txtEmail.Size = new System.Drawing.Size(293, 35);
-            this.txtEmail.TabIndex = 7;
-            this.txtEmail.Texts = "";
-            this.txtEmail.UnderlinedStyle = false;
-            this.txtEmail._TextChanged += new System.EventHandler(this.txtEmail__TextChanged);
+            this.txtEmail.Size = new System.Drawing.Size(256, 27);
+            this.txtEmail.TabIndex = 3;
+            this.txtEmail.Text = "";
+            this.txtEmail.TextChanged += new System.EventHandler(this.txtEmail_TextChanged);
             this.txtEmail.Enter += new System.EventHandler(this.txtEmail_Enter);
             this.txtEmail.Leave += new System.EventHandler(this.txtEmail_Leave);
             // 
             // pictureBox2
             // 
-            this.pictureBox2.BackColor = System.Drawing.Color.White;
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(49, 101);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(19, 19);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 10;
-            this.pictureBox2.TabStop = false;
+            this.txtPass.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPass.Location = new System.Drawing.Point(34, 81);
+            this.txtPass.Name = "txtPass";
+            this.txtPass.Size = new System.Drawing.Size(256, 25);
+            this.txtPass.TabIndex = 4;
+            this.txtPass.Text = "";
+            this.txtPass.Enter += new System.EventHandler(this.txtPass_Enter);
+            this.txtPass.Leave += new System.EventHandler(this.txtPass_Leave);
             // 
             // loginpanel
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.ClientSize = new System.Drawing.Size(339, 299);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.pictureBox1);
+            this.ClientSize = new System.Drawing.Size(302, 282);
             this.Controls.Add(this.txtPass);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.btnLogin);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "loginpanel";
             this.Text = "loginpanel";
             this.Load += new System.EventHandler(this.loginpanel_Load);

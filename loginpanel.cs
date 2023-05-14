@@ -57,7 +57,7 @@ namespace TuneTastic
         {
             string email = txtEmail.Texts;
             string password = txtPass.Texts;
-            
+
             // Check if email and password are not empty
             if (txtEmail.Texts != "" && txtPass.Texts != "")
             {
@@ -111,6 +111,7 @@ namespace TuneTastic
             }
         }
 
+
         private void txtEmai_TextChanged(object sender, EventArgs e)
         {
 
@@ -125,5 +126,6 @@ namespace TuneTastic
         {
 
         }
+
     }
 }

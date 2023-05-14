@@ -16,10 +16,15 @@ namespace TuneTastic
         {
             InitializeComponent();
         }
-        
+
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void btn_home_Click(object sender, EventArgs e)
+        {
+            openChildFormInPanel(new MainPanel());
         }
 
         private void Form1_Load(object sender, EventArgs e)
