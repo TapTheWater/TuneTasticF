@@ -16,7 +16,21 @@ namespace TuneTastic
         {
             InitializeComponent();
         }
-        
+
+        private Form activeForm = null;
+        private void openChildFormInPanel(Form childForm)
+        {
+            if (activeForm != null)
+                activeForm.Close();
+            activeForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            panel1.Controls.Add(childForm);
+            panel1.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
+        }
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
@@ -25,6 +39,21 @@ namespace TuneTastic
         private void Form1_Load(object sender, EventArgs e)
         {
             
+        }
+
+        private void pictureBox8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_search_Click(object sender, EventArgs e)
+        {
+            openChildFormInPanel(new searchpanel());
         }
     }
 }
