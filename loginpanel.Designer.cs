@@ -102,7 +102,7 @@
             this.txtEmail.Padding = new System.Windows.Forms.Padding(40, 7, 10, 7);
             this.txtEmail.PasswordChar = false;
             this.txtEmail.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.txtEmail.PlaceholderText = "Email/Username";
+            this.txtEmail.PlaceholderText = "Email";
             this.txtEmail.Size = new System.Drawing.Size(293, 35);
             this.txtEmail.TabIndex = 7;
             this.txtEmail.Texts = "";

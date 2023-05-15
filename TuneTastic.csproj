@@ -104,11 +104,23 @@
     <Compile Include="Controls\RBTextbox.Designer.cs">
       <DependentUpon>RBTextbox.cs</DependentUpon>
     </Compile>
+    <Compile Include="favoritepanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="favoritepanel.Designer.cs">
+      <DependentUpon>favoritepanel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="homepanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="homepanel.Designer.cs">
+      <DependentUpon>homepanel.cs</DependentUpon>
     </Compile>
     <Compile Include="login.cs">
       <SubType>Form</SubType>
@@ -121,6 +133,12 @@
     </Compile>
     <Compile Include="loginpanel.Designer.cs">
       <DependentUpon>loginpanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="profilepanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="profilepanel.Designer.cs">
+      <DependentUpon>profilepanel.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -136,17 +154,27 @@
     <Compile Include="searchpanel.Designer.cs">
       <DependentUpon>searchpanel.cs</DependentUpon>
     </Compile>
+    <Compile Include="username.cs" />
     <EmbeddedResource Include="Controls\RBTextbox.resx">
       <DependentUpon>RBTextbox.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="favoritepanel.resx">
+      <DependentUpon>favoritepanel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="homepanel.resx">
+      <DependentUpon>homepanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="login.resx">
       <DependentUpon>login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="loginpanel.resx">
       <DependentUpon>loginpanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="profilepanel.resx">
+      <DependentUpon>profilepanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -34,14 +34,14 @@
             // 
             // track_list
             // 
-            this.track_list.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.track_list.BackColor = System.Drawing.Color.Black;
             this.track_list.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.track_list.Cursor = System.Windows.Forms.Cursors.Default;
             this.track_list.ForeColor = System.Drawing.SystemColors.Window;
             this.track_list.FormattingEnabled = true;
             this.track_list.ItemHeight = 16;
             this.track_list.Location = new System.Drawing.Point(67, 55);
-            this.track_list.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.track_list.Margin = new System.Windows.Forms.Padding(4);
             this.track_list.Name = "track_list";
             this.track_list.Size = new System.Drawing.Size(761, 352);
             this.track_list.TabIndex = 0;
@@ -50,8 +50,8 @@
             // btn_open
             // 
             this.btn_open.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_open.Location = new System.Drawing.Point(287, 415);
-            this.btn_open.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_open.Location = new System.Drawing.Point(312, 416);
+            this.btn_open.Margin = new System.Windows.Forms.Padding(4);
             this.btn_open.Name = "btn_open";
             this.btn_open.Size = new System.Drawing.Size(300, 69);
             this.btn_open.TabIndex = 1;
@@ -67,7 +67,7 @@
             this.ClientSize = new System.Drawing.Size(903, 527);
             this.Controls.Add(this.btn_open);
             this.Controls.Add(this.track_list);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "searchpanel";
             this.Text = "Search";
             this.ResumeLayout(false);
