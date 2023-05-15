@@ -74,22 +74,22 @@ namespace TuneTastic
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            string emailOrUsername = txtEmail.Texts;
+            string email = txtEmail.Texts;
             string password = txtPass.Texts;
 
             // Check if email/username and password are not empty
-            if (!string.IsNullOrEmpty(emailOrUsername) && !string.IsNullOrEmpty(password))
+            if (!string.IsNullOrEmpty(email) && !string.IsNullOrEmpty(password))
             {
                 string connectionString = "server=localhost;user=root;database=tunetastic;password=;SslMode=None;";
 
-                string query = "SELECT email FROM tb_credentials WHERE (email = @EmailOrUsername OR username = @EmailOrUsername) AND password = @Password";
+                string query = "SELECT email FROM tb_credentials WHERE (email = @Email AND password = @Password";
 
                 using (MySqlConnection con = new MySqlConnection(connectionString))
                 {
                     using (MySqlCommand cmd = new MySqlCommand(query, con))
                     {
                         // Add email/username and password as parameters to avoid SQL injection
-                        cmd.Parameters.AddWithValue("@EmailOrUsername", emailOrUsername);
+                        cmd.Parameters.AddWithValue("@Email", email);
                         cmd.Parameters.AddWithValue("@Password", password);
 
                         con.Open();
@@ -115,7 +115,7 @@ namespace TuneTastic
                             {
                                 // Email/username and/or password do not exist in the database
                                 // Show an error message or take appropriate action
-                                MessageBox.Show("Invalid email/username or password.");
+                                MessageBox.Show("Invalid email or password.");
                             }
                         }
                     }

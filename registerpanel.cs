@@ -1,5 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace TuneTastic
@@ -43,7 +44,28 @@ namespace TuneTastic
 
         private void registerpanel_Load(object sender, EventArgs e)
         {
+            
+            checkBox2.Checked = true;  
 
+            Image originalImage = Properties.Resources.passhide; // Replace "icon.png" with your actual image file path or use Properties.Resources.IconName to load from resources
+
+            // Resize the image to 20x20 pixels
+            Image resizedImage = new Bitmap(20, 15);
+            using (Graphics g = Graphics.FromImage(resizedImage))
+            {
+                g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+                g.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.HighQualityBicubic;
+                g.DrawImage(originalImage, 0, 0, 20, 15);
+            }
+
+            checkBox2.Appearance = Appearance.Button;
+            checkBox2.Image = resizedImage;
+            checkBox2.FlatStyle = FlatStyle.Flat;
+            checkBox2.FlatAppearance.BorderSize = 0;
+            checkBox2.FlatAppearance.CheckedBackColor = Color.White;
+            checkBox2.FlatAppearance.MouseDownBackColor = Color.White;
+
+          
         }
 
         public void ResetRadioButtons()
@@ -155,6 +177,59 @@ namespace TuneTastic
             {
                 MessageBox.Show("Please input a username!");
             }
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void checkBox2_CheckedChanged(object sender, EventArgs e)
+        {
+            checkBox2.CheckedChanged += (s, _) =>
+            {
+                if (checkBox2.Checked == true)
+                {
+                    txtPass.PasswordChar = true; // Mask password characters
+                    Image originalImage = Properties.Resources.passhide; // Replace "icon.png" with your actual image file path or use Properties.Resources.IconName to load from resources
+
+                    // Resize the image to 20x20 pixels
+                    Image resizedImage = new Bitmap(20, 15);
+                    using (Graphics g = Graphics.FromImage(resizedImage))
+                    {
+                        g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+                        g.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.HighQualityBicubic;
+                        g.DrawImage(originalImage, 0, 0, 20, 15);
+                    }
+
+                    checkBox2.Appearance = Appearance.Button;
+                    checkBox2.Image = resizedImage;
+                    checkBox2.FlatAppearance.BorderSize = 0;
+                    checkBox2.FlatAppearance.CheckedBackColor = Color.White;
+                    checkBox2.FlatAppearance.MouseDownBackColor = Color.White;
+
+                }
+                else
+                {
+                    txtPass.PasswordChar = false; // Show password characters
+                    Image originalImage = Properties.Resources.passshow; // Replace "icon.png" with your actual image file path or use Properties.Resources.IconName to load from resources
+
+                    // Resize the image to 20x20 pixels
+                    Image resizedImage = new Bitmap(20, 15);
+                    using (Graphics g = Graphics.FromImage(resizedImage))
+                    {
+                        g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+                        g.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.HighQualityBicubic;
+                        g.DrawImage(originalImage, 0, 0, 20, 15);
+                    }
+
+                    checkBox2.Appearance = Appearance.Button;
+                    checkBox2.Image = resizedImage;
+                    checkBox2.FlatAppearance.BorderSize = 0;
+                    checkBox2.FlatAppearance.CheckedBackColor = Color.White;
+                    checkBox2.FlatAppearance.MouseDownBackColor = Color.White;
+                }
+            };
         }
     }
 }

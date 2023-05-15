@@ -13,6 +13,11 @@ namespace TuneTastic
 {
     public partial class searchpanel : Form
     {
+        public event EventHandler SongLoaded;
+        public void LoadSongs(string[] songPaths)
+        {
+            track_list.Items.AddRange(songPaths);
+        }
         public searchpanel()
         {
             InitializeComponent();
@@ -20,6 +25,7 @@ namespace TuneTastic
             label_volume.Text = "50%";
         }
         string[] paths, files;
+
 
         private void btn_prev_Click(object sender, EventArgs e)
         {
@@ -102,16 +108,15 @@ namespace TuneTastic
 
         private void btn_open_Click(object sender, EventArgs e)
         {
-            OpenFileDialog ofd=new OpenFileDialog();
+            OpenFileDialog ofd = new OpenFileDialog();
             ofd.Multiselect = true;
-            if (ofd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            if (ofd.ShowDialog() == DialogResult.OK)
             {
-                files=ofd.FileNames;
-                paths=ofd.FileNames;
-                for(int x=0; x < files.Length; x++)
-                {
-                    track_list.Items.Add(files[x]);
-                }
+                files = ofd.FileNames;
+                paths = ofd.FileNames;
+                LoadSongs(files);
+
+                SongLoaded?.Invoke(this, EventArgs.Empty);
             }
         }
     }

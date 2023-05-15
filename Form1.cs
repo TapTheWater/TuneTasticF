@@ -13,6 +13,8 @@ namespace TuneTastic
 {
     public partial class Form1 : Form
     {
+        
+
         public Form1()
         {
             InitializeComponent();
@@ -23,12 +25,13 @@ namespace TuneTastic
         private void track_list_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+
         }
         private Form activeForm = null;
         private void openChildFormInPanel(Form childForm)
         {
             if (activeForm != null)
-                activeForm.Close();
+                activeForm.Hide();
             activeForm = childForm;
             childForm.TopLevel = false;
             childForm.FormBorderStyle = FormBorderStyle.None;
@@ -37,6 +40,7 @@ namespace TuneTastic
             panel_home.Tag = childForm;
             childForm.BringToFront();
             childForm.Show();
+            
         }
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
@@ -45,7 +49,7 @@ namespace TuneTastic
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
+            openChildFormInPanel(new homepanel());
         }
 
         private void pictureBox8_Click(object sender, EventArgs e)
@@ -80,7 +84,52 @@ namespace TuneTastic
 
         private void btn_search_Click(object sender, EventArgs e)
         {
-            openChildFormInPanel(new searchpanel());
+            if (searchPanel == null || searchPanel.IsDisposed)
+            {
+                searchPanel = new searchpanel();
+                searchPanel.SongLoaded += SearchPanel_SongLoaded;
+            }
+            openChildFormInPanel(searchPanel);
+        }
+        private void SearchPanel_SongLoaded(object sender, EventArgs e)
+        {
+            // Handle any actions after songs are loaded in the searchpanel
+            // For example, you can perform additional logic or update UI elements.
+        }
+
+        private void btn_home_Click(object sender, EventArgs e)
+        {
+            openChildFormInPanel(new homepanel());
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            openChildFormInPanel(new favoritepanel());
+        }
+
+        private void btn_playlist_Click(object sender, EventArgs e)
+        {
+            openChildFormInPanel(new favoritepanel());
+        }
+
+        private void btn_friend_Click(object sender, EventArgs e)
+        {
+            openChildFormInPanel(new favoritepanel());
+        }
+
+        private void btn_setting_Click(object sender, EventArgs e)
+        {
+            openChildFormInPanel(new favoritepanel());
+        }
+
+        private void panel1_Paint_1(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btn_profile_Click(object sender, EventArgs e)
+        {
+            openChildFormInPanel(new profilepanel());
         }
 
         private void btn_prev_Click(object sender, EventArgs e)

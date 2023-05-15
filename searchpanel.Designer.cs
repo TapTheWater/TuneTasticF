@@ -87,7 +87,7 @@
             // 
             // track_list
             // 
-            this.track_list.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.track_list.BackColor = System.Drawing.Color.Black;
             this.track_list.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.track_list.Cursor = System.Windows.Forms.Cursors.Default;
             this.track_list.ForeColor = System.Drawing.SystemColors.Window;
@@ -248,11 +248,13 @@
             // 
             // searchpanel
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+
             this.ClientSize = new System.Drawing.Size(677, 503);
             this.Controls.Add(this.panel_control);
+
             this.Name = "searchpanel";
             this.Text = "Search";
             this.panel_control.ResumeLayout(false);
