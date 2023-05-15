@@ -17,11 +17,13 @@ namespace TuneTastic
             InitializeComponent();
         }
 
+        private searchpanel searchPanel;
+
         private Form activeForm = null;
         private void openChildFormInPanel(Form childForm)
         {
             if (activeForm != null)
-                activeForm.Close();
+                activeForm.Hide();
             activeForm = childForm;
             childForm.TopLevel = false;
             childForm.FormBorderStyle = FormBorderStyle.None;
@@ -53,7 +55,17 @@ namespace TuneTastic
 
         private void btn_search_Click(object sender, EventArgs e)
         {
-            openChildFormInPanel(new searchpanel());
+            if (searchPanel == null || searchPanel.IsDisposed)
+            {
+                searchPanel = new searchpanel();
+                searchPanel.SongLoaded += SearchPanel_SongLoaded;
+            }
+            openChildFormInPanel(searchPanel);
+        }
+        private void SearchPanel_SongLoaded(object sender, EventArgs e)
+        {
+            // Handle any actions after songs are loaded in the searchpanel
+            // For example, you can perform additional logic or update UI elements.
         }
     }
 }
