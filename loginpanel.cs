@@ -4,6 +4,8 @@ using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using System.Drawing.Imaging;
 
 namespace TuneTastic
 {
@@ -24,7 +26,25 @@ namespace TuneTastic
 
         private void loginpanel_Load(object sender, EventArgs e)
         {
-            
+            checkBox1.Checked = true;
+
+            Image originalImage = Properties.Resources.passhide; // Replace "icon.png" with your actual image file path or use Properties.Resources.IconName to load from resources
+
+            // Resize the image to 20x20 pixels
+            Image resizedImage = new Bitmap(20, 15);
+            using (Graphics g = Graphics.FromImage(resizedImage))
+            {
+                g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+                g.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.HighQualityBicubic;
+                g.DrawImage(originalImage, 0, 0, 20, 15);
+            }
+
+            checkBox1.Appearance = Appearance.Button;
+            checkBox1.Image = resizedImage;
+            checkBox1.FlatStyle = FlatStyle.Flat;
+            checkBox1.FlatAppearance.BorderSize = 0;
+            checkBox1.FlatAppearance.CheckedBackColor = Color.White;
+            checkBox1.FlatAppearance.MouseDownBackColor = Color.White;
         }
 
         private void txtEmail_Enter(object sender, EventArgs e)
@@ -62,7 +82,7 @@ namespace TuneTastic
             {
                 string connectionString = "server=localhost;user=root;database=tunetastic;password=;SslMode=None;";
 
-                string query = "SELECT email FROM tb_credentials WHERE (email = @EmailOrUsername OR username = @EmailOrUsername) AND pass = @Password";
+                string query = "SELECT email FROM tb_credentials WHERE (email = @EmailOrUsername OR username = @EmailOrUsername) AND password = @Password";
 
                 using (MySqlConnection con = new MySqlConnection(connectionString))
                 {
@@ -121,6 +141,61 @@ namespace TuneTastic
         }
 
         private void txtPass__TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            checkBox1.CheckedChanged += (s, _) =>
+            {
+                if (checkBox1.Checked == true)
+                {
+                    txtPass.PasswordChar = true; // Mask password characters
+                    Image originalImage = Properties.Resources.passhide; // Replace "icon.png" with your actual image file path or use Properties.Resources.IconName to load from resources
+
+                    // Resize the image to 20x20 pixels
+                    Image resizedImage = new Bitmap(20, 15);
+                    using (Graphics g = Graphics.FromImage(resizedImage))
+                    {
+                        g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+                        g.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.HighQualityBicubic;
+                        g.DrawImage(originalImage, 0, 0, 20, 15);
+                    }
+
+                    checkBox1.Appearance = Appearance.Button;
+                    checkBox1.Image = resizedImage;
+                    checkBox1.FlatAppearance.BorderSize = 0;
+                    checkBox1.FlatAppearance.CheckedBackColor = Color.White;
+                    checkBox1.FlatAppearance.MouseDownBackColor = Color.White;
+
+                }
+                else
+                {
+                    txtPass.PasswordChar = false; // Show password characters
+                    Image originalImage = Properties.Resources.passshow; // Replace "icon.png" with your actual image file path or use Properties.Resources.IconName to load from resources
+
+                    // Resize the image to 20x20 pixels
+                    Image resizedImage = new Bitmap(20, 15);
+                    using (Graphics g = Graphics.FromImage(resizedImage))
+                    {
+                        g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+                        g.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.HighQualityBicubic;
+                        g.DrawImage(originalImage, 0, 0, 20, 15);
+                    }
+
+                    checkBox1.Appearance = Appearance.Button;
+                    checkBox1.Image = resizedImage;
+                    checkBox1.FlatAppearance.BorderSize = 0;
+                    checkBox1.FlatAppearance.CheckedBackColor = Color.White;
+                    checkBox1.FlatAppearance.MouseDownBackColor = Color.White;
+                }
+            };
+
+
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
         {
 
         }

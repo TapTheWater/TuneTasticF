@@ -57,6 +57,10 @@ namespace TuneTastic
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+        }
+
+        private void btnRegister_Click(object sender, EventArgs e)
+        {
             string username = txtUsername.Texts;
             string email = txtEmail.Texts;
             string password = txtPass.Texts;
@@ -67,7 +71,7 @@ namespace TuneTastic
 
                 string usernameCheckQuery = "SELECT COUNT(*) FROM tb_credentials WHERE username = @Username";
                 string emailCheckQuery = "SELECT COUNT(*) FROM tb_credentials WHERE email = @Email";
-                string query = "INSERT INTO tb_credentials (username, email, pass) VALUES (@Username, @Email, @Password)";
+                string query = "INSERT INTO tb_credentials (username, email, password) SELECT @Username, @Email, @Password FROM dual WHERE NOT EXISTS (SELECT 1 FROM tb_credentials WHERE username = @Username)";
 
                 using (MySqlConnection con = new MySqlConnection(connectionString))
                 {

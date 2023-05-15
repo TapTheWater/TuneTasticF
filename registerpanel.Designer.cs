@@ -50,7 +50,7 @@
             this.btnRegister.TabIndex = 12;
             this.btnRegister.Text = "Register";
             this.btnRegister.UseVisualStyleBackColor = true;
-            this.btnRegister.Click += new System.EventHandler(this.btnLogin_Click);
+            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
             // txtPass
             // 
@@ -66,7 +66,7 @@
             this.txtPass.Multiline = false;
             this.txtPass.Name = "txtPass";
             this.txtPass.Padding = new System.Windows.Forms.Padding(40, 7, 10, 7);
-            this.txtPass.PasswordChar = false;
+            this.txtPass.PasswordChar = true;
             this.txtPass.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtPass.PlaceholderText = "Password";
             this.txtPass.Size = new System.Drawing.Size(293, 35);

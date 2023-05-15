@@ -27,7 +27,7 @@ namespace TuneTastic.Controls
         private Color placeholderColor = Color.Black;
         private string placeholderText = "";
         private bool isPlaceholder = false;
-        private bool isPasswordChar = true;
+        private bool isPasswordChar = false;
 
         //Events
         public event EventHandler _TextChanged;
