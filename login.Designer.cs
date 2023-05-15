@@ -42,9 +42,10 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(855, 30);
+            this.pictureBox1.Location = new System.Drawing.Point(641, 24);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(202, 125);
+            this.pictureBox1.Size = new System.Drawing.Size(152, 102);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
@@ -52,10 +53,12 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.panel1.Location = new System.Drawing.Point(773, 228);
+            this.panel1.Location = new System.Drawing.Point(580, 185);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(357, 346);
+            this.panel1.Size = new System.Drawing.Size(268, 281);
             this.panel1.TabIndex = 0;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // rbLogin
             // 
@@ -68,9 +71,10 @@
             this.rbLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rbLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbLogin.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.rbLogin.Location = new System.Drawing.Point(848, 178);
+            this.rbLogin.Location = new System.Drawing.Point(636, 145);
+            this.rbLogin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.rbLogin.Name = "rbLogin";
-            this.rbLogin.Size = new System.Drawing.Size(70, 35);
+            this.rbLogin.Size = new System.Drawing.Size(58, 30);
             this.rbLogin.TabIndex = 2;
             this.rbLogin.Text = "Login";
             this.rbLogin.UseVisualStyleBackColor = false;
@@ -87,9 +91,10 @@
             this.rbRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rbRegister.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbRegister.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.rbRegister.Location = new System.Drawing.Point(971, 175);
+            this.rbRegister.Location = new System.Drawing.Point(728, 142);
+            this.rbRegister.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.rbRegister.Name = "rbRegister";
-            this.rbRegister.Size = new System.Drawing.Size(101, 43);
+            this.rbRegister.Size = new System.Drawing.Size(87, 38);
             this.rbRegister.TabIndex = 3;
             this.rbRegister.Text = "Register";
             this.rbRegister.UseVisualStyleBackColor = false;
@@ -100,8 +105,9 @@
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.Location = new System.Drawing.Point(0, -2);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(1195, 623);
+            this.pictureBox2.Size = new System.Drawing.Size(896, 506);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 4;
             this.pictureBox2.TabStop = false;
@@ -109,15 +115,16 @@
             // 
             // login
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(1193, 620);
+            this.ClientSize = new System.Drawing.Size(895, 504);
             this.Controls.Add(this.rbRegister);
             this.Controls.Add(this.rbLogin);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "login";
             this.Text = "login";
             this.Load += new System.EventHandler(this.login_Load);
