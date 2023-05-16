@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Media;
 
 namespace TuneTastic
 {
@@ -17,12 +18,15 @@ namespace TuneTastic
         public Form1()
         {
             InitializeComponent();
-            
+
         }
-        
+        string[] paths, files;
 
-        private searchpanel searchPanel;
+        private void track_list_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
+
+        }
         private Form activeForm = null;
         private void openChildFormInPanel(Form childForm)
         {
@@ -32,8 +36,8 @@ namespace TuneTastic
             childForm.TopLevel = false;
             childForm.FormBorderStyle = FormBorderStyle.None;
             childForm.Dock = DockStyle.Fill;
-            panel1.Controls.Add(childForm);
-            panel1.Tag = childForm;
+            panel_home.Controls.Add(childForm);
+            panel_home.Tag = childForm;
             childForm.BringToFront();
             childForm.Show();
             
@@ -54,6 +58,26 @@ namespace TuneTastic
         }
 
         private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_open_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_next_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+
+        }
+
+        private void track_volume_Scroll(object sender, EventArgs e)
         {
 
         }
@@ -107,5 +131,11 @@ namespace TuneTastic
         {
             openChildFormInPanel(new profilepanel());
         }
+
+        private void btn_prev_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
+
