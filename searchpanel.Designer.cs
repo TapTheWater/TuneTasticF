@@ -103,6 +103,7 @@
             this.btn_open.UseVisualStyleBackColor = true;
             this.btn_open.Click += new System.EventHandler(this.btn_open_Click_1);
             // 
+
             // track_list
             // 
             this.track_list.BackColor = System.Drawing.Color.Black;
@@ -110,10 +111,12 @@
             this.track_list.Cursor = System.Windows.Forms.Cursors.Default;
             this.track_list.ForeColor = System.Drawing.SystemColors.Window;
             this.track_list.FormattingEnabled = true;
-            this.track_list.Location = new System.Drawing.Point(63, 58);
+            this.track_list.ItemHeight = 16;
+            this.track_list.Location = new System.Drawing.Point(67, 55);
+            this.track_list.Margin = new System.Windows.Forms.Padding(4);
             this.track_list.Name = "track_list";
-            this.track_list.Size = new System.Drawing.Size(571, 286);
-            this.track_list.TabIndex = 43;
+            this.track_list.Size = new System.Drawing.Size(761, 352);
+            this.track_list.TabIndex = 0;
             this.track_list.SelectedIndexChanged += new System.EventHandler(this.track_list_SelectedIndexChanged);
             // 
             // btn_prev
@@ -251,10 +254,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-
-            this.ClientSize = new System.Drawing.Size(677, 503);
-            this.Controls.Add(this.panel_control);
-
+            this.ClientSize = new System.Drawing.Size(903, 527);
+            this.Controls.Add(this.btn_open);
+            this.Controls.Add(this.track_list);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "searchpanel";
             this.Text = "Search";
             this.panel_control.ResumeLayout(false);
@@ -262,14 +265,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.track_volume)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.player)).EndInit();
+
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel panel_control;
-        private System.Windows.Forms.Button btn_open;
         private System.Windows.Forms.ListBox track_list;
         private System.Windows.Forms.Button btn_prev;
         private System.Windows.Forms.Button btn_next;
@@ -283,5 +285,6 @@
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Button btn_pause;
         private AxWMPLib.AxWindowsMediaPlayer player;
+
     }
 }
