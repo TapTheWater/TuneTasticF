@@ -91,7 +91,7 @@
             this.txtEmail.BackColor = System.Drawing.SystemColors.Window;
             this.txtEmail.BorderColor = System.Drawing.Color.White;
             this.txtEmail.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(144)))), ((int)(((byte)(207)))));
-            this.txtEmail.BorderRadius = 15;
+            this.txtEmail.BorderRadius = 10;
             this.txtEmail.BorderSize = 2;
             this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmail.ForeColor = System.Drawing.Color.Black;
@@ -102,7 +102,7 @@
             this.txtEmail.Padding = new System.Windows.Forms.Padding(40, 7, 10, 7);
             this.txtEmail.PasswordChar = false;
             this.txtEmail.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.txtEmail.PlaceholderText = "Email/Username";
+            this.txtEmail.PlaceholderText = "Email";
             this.txtEmail.Size = new System.Drawing.Size(293, 35);
             this.txtEmail.TabIndex = 7;
             this.txtEmail.Texts = "";
@@ -116,7 +116,7 @@
             this.txtPass.BackColor = System.Drawing.SystemColors.Window;
             this.txtPass.BorderColor = System.Drawing.Color.White;
             this.txtPass.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(144)))), ((int)(((byte)(207)))));
-            this.txtPass.BorderRadius = 15;
+            this.txtPass.BorderRadius = 10;
             this.txtPass.BorderSize = 2;
             this.txtPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPass.ForeColor = System.Drawing.Color.Black;
