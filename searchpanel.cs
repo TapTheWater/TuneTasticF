@@ -29,6 +29,11 @@ namespace TuneTastic
 
         }
 
+        private void panel_control_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
         private void btn_open_Click(object sender, EventArgs e)
         {
             OpenFileDialog ofd = new OpenFileDialog();
