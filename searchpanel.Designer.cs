@@ -31,12 +31,12 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(searchpanel));
             this.panel_control = new System.Windows.Forms.Panel();
+            this.btn_pause = new System.Windows.Forms.Button();
             this.btn_open = new System.Windows.Forms.Button();
             this.track_list = new System.Windows.Forms.ListBox();
             this.btn_prev = new System.Windows.Forms.Button();
             this.btn_next = new System.Windows.Forms.Button();
             this.track_volume = new System.Windows.Forms.TrackBar();
-            this.player = new AxWMPLib.AxWindowsMediaPlayer();
             this.progresssong = new System.Windows.Forms.ProgressBar();
             this.btn_play = new System.Windows.Forms.Button();
             this.label_volume = new System.Windows.Forms.Label();
@@ -44,23 +44,23 @@
             this.label_trackend = new System.Windows.Forms.Label();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.btn_pause = new System.Windows.Forms.Button();
+            this.player = new AxWMPLib.AxWindowsMediaPlayer();
             this.panel_control.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.track_volume)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.player)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.player)).BeginInit();
             this.SuspendLayout();
             // 
             // panel_control
             // 
             this.panel_control.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.panel_control.Controls.Add(this.player);
             this.panel_control.Controls.Add(this.btn_pause);
             this.panel_control.Controls.Add(this.btn_open);
             this.panel_control.Controls.Add(this.track_list);
             this.panel_control.Controls.Add(this.btn_prev);
             this.panel_control.Controls.Add(this.btn_next);
             this.panel_control.Controls.Add(this.track_volume);
-            this.panel_control.Controls.Add(this.player);
             this.panel_control.Controls.Add(this.progresssong);
             this.panel_control.Controls.Add(this.btn_play);
             this.panel_control.Controls.Add(this.label_volume);
@@ -73,6 +73,24 @@
             this.panel_control.Name = "panel_control";
             this.panel_control.Size = new System.Drawing.Size(693, 542);
             this.panel_control.TabIndex = 6;
+            this.panel_control.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_control_Paint);
+            // 
+            // btn_pause
+            // 
+            this.btn_pause.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_pause.BackgroundImage")));
+            this.btn_pause.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_pause.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btn_pause.FlatAppearance.BorderSize = 0;
+            this.btn_pause.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_pause.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btn_pause.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.btn_pause.Location = new System.Drawing.Point(228, 449);
+            this.btn_pause.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_pause.Name = "btn_pause";
+            this.btn_pause.Size = new System.Drawing.Size(31, 30);
+            this.btn_pause.TabIndex = 45;
+            this.btn_pause.UseVisualStyleBackColor = true;
+            this.btn_pause.Click += new System.EventHandler(this.btn_pause_Click);
             // 
             // btn_open
             // 
@@ -140,17 +158,6 @@
             this.track_volume.Size = new System.Drawing.Size(133, 45);
             this.track_volume.TabIndex = 40;
             this.track_volume.Scroll += new System.EventHandler(this.track_volume_Scroll);
-            // 
-            // player
-            // 
-            this.player.Dock = System.Windows.Forms.DockStyle.Top;
-            this.player.Enabled = true;
-            this.player.Location = new System.Drawing.Point(0, 0);
-            this.player.Name = "player";
-            this.player.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("player.OcxState")));
-            this.player.Size = new System.Drawing.Size(693, 36);
-            this.player.TabIndex = 39;
-            this.player.Visible = false;
             // 
             // progresssong
             // 
@@ -229,22 +236,15 @@
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // btn_pause
+            // player
             // 
-            this.btn_pause.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_pause.BackgroundImage")));
-            this.btn_pause.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_pause.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btn_pause.FlatAppearance.BorderSize = 0;
-            this.btn_pause.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_pause.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btn_pause.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btn_pause.Location = new System.Drawing.Point(228, 449);
-            this.btn_pause.Margin = new System.Windows.Forms.Padding(2);
-            this.btn_pause.Name = "btn_pause";
-            this.btn_pause.Size = new System.Drawing.Size(31, 30);
-            this.btn_pause.TabIndex = 45;
-            this.btn_pause.UseVisualStyleBackColor = true;
-            this.btn_pause.Click += new System.EventHandler(this.btn_pause_Click);
+            this.player.Dock = System.Windows.Forms.DockStyle.Top;
+            this.player.Enabled = true;
+            this.player.Location = new System.Drawing.Point(0, 0);
+            this.player.Name = "player";
+            this.player.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("player.OcxState")));
+            this.player.Size = new System.Drawing.Size(693, 52);
+            this.player.TabIndex = 46;
             // 
             // searchpanel
             // 
@@ -258,8 +258,8 @@
             this.panel_control.ResumeLayout(false);
             this.panel_control.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.track_volume)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.player)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.player)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -272,7 +272,6 @@
         private System.Windows.Forms.Button btn_prev;
         private System.Windows.Forms.Button btn_next;
         private System.Windows.Forms.TrackBar track_volume;
-        private AxWMPLib.AxWindowsMediaPlayer player;
         private System.Windows.Forms.ProgressBar progresssong;
         private System.Windows.Forms.Button btn_play;
         private System.Windows.Forms.Label label_volume;
@@ -281,5 +280,6 @@
         private System.Windows.Forms.PictureBox pictureBox8;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Button btn_pause;
+        private AxWMPLib.AxWindowsMediaPlayer player;
     }
 }
