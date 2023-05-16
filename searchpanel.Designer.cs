@@ -31,9 +31,8 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(searchpanel));
             this.panel_control = new System.Windows.Forms.Panel();
+            this.player = new AxWMPLib.AxWindowsMediaPlayer();
             this.btn_pause = new System.Windows.Forms.Button();
-            this.btn_open = new System.Windows.Forms.Button();
-            this.track_list = new System.Windows.Forms.ListBox();
             this.btn_prev = new System.Windows.Forms.Button();
             this.btn_next = new System.Windows.Forms.Button();
             this.track_volume = new System.Windows.Forms.TrackBar();
@@ -43,12 +42,27 @@
             this.label_trackstart = new System.Windows.Forms.Label();
             this.label_trackend = new System.Windows.Forms.Label();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
+            this.btn_open = new System.Windows.Forms.Button();
+            this.track_list = new System.Windows.Forms.ListBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.player = new AxWMPLib.AxWindowsMediaPlayer();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.trackBar1 = new System.Windows.Forms.TrackBar();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.button3 = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.button4 = new System.Windows.Forms.Button();
+            this.player1 = new AxWMPLib.AxWindowsMediaPlayer();
             this.panel_control.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.player)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.track_volume)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.player)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.player1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel_control
@@ -56,8 +70,6 @@
             this.panel_control.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.panel_control.Controls.Add(this.player);
             this.panel_control.Controls.Add(this.btn_pause);
-            this.panel_control.Controls.Add(this.btn_open);
-            this.panel_control.Controls.Add(this.track_list);
             this.panel_control.Controls.Add(this.btn_prev);
             this.panel_control.Controls.Add(this.btn_next);
             this.panel_control.Controls.Add(this.track_volume);
@@ -75,6 +87,16 @@
             this.panel_control.TabIndex = 6;
             this.panel_control.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_control_Paint);
             // 
+            // player
+            // 
+            this.player.Dock = System.Windows.Forms.DockStyle.Top;
+            this.player.Enabled = true;
+            this.player.Location = new System.Drawing.Point(0, 0);
+            this.player.Name = "player";
+            this.player.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("player.OcxState")));
+            this.player.Size = new System.Drawing.Size(693, 52);
+            this.player.TabIndex = 46;
+            // 
             // btn_pause
             // 
             this.btn_pause.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_pause.BackgroundImage")));
@@ -91,33 +113,6 @@
             this.btn_pause.TabIndex = 45;
             this.btn_pause.UseVisualStyleBackColor = true;
             this.btn_pause.Click += new System.EventHandler(this.btn_pause_Click);
-            // 
-            // btn_open
-            // 
-            this.btn_open.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_open.Location = new System.Drawing.Point(487, 350);
-            this.btn_open.Name = "btn_open";
-            this.btn_open.Size = new System.Drawing.Size(147, 41);
-            this.btn_open.TabIndex = 44;
-            this.btn_open.Text = "Open";
-            this.btn_open.UseVisualStyleBackColor = true;
-            this.btn_open.Click += new System.EventHandler(this.btn_open_Click_1);
-            // 
-
-            // track_list
-            // 
-            this.track_list.BackColor = System.Drawing.Color.Black;
-            this.track_list.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.track_list.Cursor = System.Windows.Forms.Cursors.Default;
-            this.track_list.ForeColor = System.Drawing.SystemColors.Window;
-            this.track_list.FormattingEnabled = true;
-            this.track_list.ItemHeight = 16;
-            this.track_list.Location = new System.Drawing.Point(67, 55);
-            this.track_list.Margin = new System.Windows.Forms.Padding(4);
-            this.track_list.Name = "track_list";
-            this.track_list.Size = new System.Drawing.Size(761, 352);
-            this.track_list.TabIndex = 0;
-            this.track_list.SelectedIndexChanged += new System.EventHandler(this.track_list_SelectedIndexChanged);
             // 
             // btn_prev
             // 
@@ -158,7 +153,7 @@
             this.track_volume.Location = new System.Drawing.Point(475, 453);
             this.track_volume.Maximum = 100;
             this.track_volume.Name = "track_volume";
-            this.track_volume.Size = new System.Drawing.Size(133, 45);
+            this.track_volume.Size = new System.Drawing.Size(133, 56);
             this.track_volume.TabIndex = 40;
             this.track_volume.Scroll += new System.EventHandler(this.track_volume_Scroll);
             // 
@@ -195,7 +190,7 @@
             this.label_volume.Location = new System.Drawing.Point(613, 454);
             this.label_volume.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label_volume.Name = "label_volume";
-            this.label_volume.Size = new System.Drawing.Size(33, 13);
+            this.label_volume.Size = new System.Drawing.Size(40, 16);
             this.label_volume.TabIndex = 35;
             this.label_volume.Text = "100%";
             // 
@@ -206,7 +201,7 @@
             this.label_trackstart.Location = new System.Drawing.Point(82, 498);
             this.label_trackstart.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label_trackstart.Name = "label_trackstart";
-            this.label_trackstart.Size = new System.Drawing.Size(34, 13);
+            this.label_trackstart.Size = new System.Drawing.Size(38, 16);
             this.label_trackstart.TabIndex = 34;
             this.label_trackstart.Text = "00:00";
             // 
@@ -218,7 +213,7 @@
             this.label_trackend.Location = new System.Drawing.Point(645, 500);
             this.label_trackend.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label_trackend.Name = "label_trackend";
-            this.label_trackend.Size = new System.Drawing.Size(34, 13);
+            this.label_trackend.Size = new System.Drawing.Size(38, 16);
             this.label_trackend.TabIndex = 33;
             this.label_trackend.Text = "00:00";
             // 
@@ -234,27 +229,193 @@
             this.pictureBox8.TabIndex = 32;
             this.pictureBox8.TabStop = false;
             // 
+            // btn_open
+            // 
+            this.btn_open.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_open.Location = new System.Drawing.Point(487, 350);
+            this.btn_open.Name = "btn_open";
+            this.btn_open.Size = new System.Drawing.Size(147, 41);
+            this.btn_open.TabIndex = 44;
+            this.btn_open.Text = "Open";
+            this.btn_open.UseVisualStyleBackColor = true;
+            this.btn_open.Click += new System.EventHandler(this.btn_open_Click_1);
+            // 
+            // track_list
+            // 
+            this.track_list.BackColor = System.Drawing.Color.Black;
+            this.track_list.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.track_list.Cursor = System.Windows.Forms.Cursors.Default;
+            this.track_list.ForeColor = System.Drawing.SystemColors.Window;
+            this.track_list.FormattingEnabled = true;
+            this.track_list.ItemHeight = 16;
+            this.track_list.Location = new System.Drawing.Point(67, 55);
+            this.track_list.Margin = new System.Windows.Forms.Padding(4);
+            this.track_list.Name = "track_list";
+            this.track_list.Size = new System.Drawing.Size(761, 352);
+            this.track_list.TabIndex = 0;
+            this.track_list.SelectedIndexChanged += new System.EventHandler(this.track_list_SelectedIndexChanged);
+            // 
             // timer1
             // 
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // player
+            // button1
             // 
-            this.player.Dock = System.Windows.Forms.DockStyle.Top;
-            this.player.Enabled = true;
-            this.player.Location = new System.Drawing.Point(0, 0);
-            this.player.Name = "player";
-            this.player.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("player.OcxState")));
-            this.player.Size = new System.Drawing.Size(693, 52);
-            this.player.TabIndex = 46;
+            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.button1.Location = new System.Drawing.Point(237, 525);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(51, 48);
+            this.button1.TabIndex = 56;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.btn_prev_Click);
+            // 
+            // button2
+            // 
+            this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.button2.Location = new System.Drawing.Point(444, 523);
+            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(65, 50);
+            this.button2.TabIndex = 55;
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.btn_next_Click);
+            // 
+            // trackBar1
+            // 
+            this.trackBar1.Location = new System.Drawing.Point(632, 536);
+            this.trackBar1.Margin = new System.Windows.Forms.Padding(4);
+            this.trackBar1.Maximum = 100;
+            this.trackBar1.Name = "trackBar1";
+            this.trackBar1.Size = new System.Drawing.Size(177, 56);
+            this.trackBar1.TabIndex = 54;
+            this.trackBar1.Scroll += new System.EventHandler(this.track_volume_Scroll);
+            // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(67, 593);
+            this.progressBar1.Margin = new System.Windows.Forms.Padding(4);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(748, 12);
+            this.progressBar1.TabIndex = 53;
+            // 
+            // button3
+            // 
+            this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
+            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.button3.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.button3.Location = new System.Drawing.Point(384, 527);
+            this.button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(37, 46);
+            this.button3.TabIndex = 52;
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.btn_play_Click);
+            // 
+            // label3
+            // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.Color.LightGray;
+            this.label3.Location = new System.Drawing.Point(816, 541);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(40, 16);
+            this.label3.TabIndex = 51;
+            this.label3.Text = "100%";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.LightGray;
+            this.label1.Location = new System.Drawing.Point(12, 593);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(38, 16);
+            this.label1.TabIndex = 50;
+            this.label1.Text = "00:00";
+            // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.LightGray;
+            this.label2.Location = new System.Drawing.Point(835, 589);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(38, 16);
+            this.label2.TabIndex = 49;
+            this.label2.Text = "00:00";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(601, 536);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(24, 24);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox1.TabIndex = 48;
+            this.pictureBox1.TabStop = false;
+            // 
+            // button4
+            // 
+            this.button4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button4.BackgroundImage")));
+            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button4.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.button4.FlatAppearance.BorderSize = 0;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.button4.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.button4.Location = new System.Drawing.Point(316, 530);
+            this.button4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(40, 37);
+            this.button4.TabIndex = 57;
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.btn_pause_Click);
+            // 
+            // player1
+            // 
+            this.player1.Enabled = true;
+            this.player1.Location = new System.Drawing.Point(2, -1);
+            this.player1.Name = "player1";
+            this.player1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("player1.OcxState")));
+            this.player1.Size = new System.Drawing.Size(900, 10);
+            this.player1.TabIndex = 58;
             // 
             // searchpanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ClientSize = new System.Drawing.Size(903, 527);
+            this.ClientSize = new System.Drawing.Size(906, 634);
+            this.Controls.Add(this.player1);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.trackBar1);
+            this.Controls.Add(this.progressBar1);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btn_open);
             this.Controls.Add(this.track_list);
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -262,17 +423,21 @@
             this.Text = "Search";
             this.panel_control.ResumeLayout(false);
             this.panel_control.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.player)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.track_volume)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.player)).EndInit();
-
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.player1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.ListBox track_list;
+        private System.Windows.Forms.Panel panel_control;
         private System.Windows.Forms.Button btn_prev;
         private System.Windows.Forms.Button btn_next;
         private System.Windows.Forms.TrackBar track_volume;
@@ -285,6 +450,17 @@
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Button btn_pause;
         private AxWMPLib.AxWindowsMediaPlayer player;
-
+        private System.Windows.Forms.Button btn_open;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TrackBar trackBar1;
+        private System.Windows.Forms.ProgressBar progressBar1;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button button4;
+        private AxWMPLib.AxWindowsMediaPlayer player1;
     }
 }

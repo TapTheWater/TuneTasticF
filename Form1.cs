@@ -107,5 +107,10 @@ namespace TuneTastic
         {
             openChildFormInPanel(new profilepanel());
         }
+
+        private void track_volume_Scroll(object sender, EventArgs e)
+        {
+
+        }
     }
 }
