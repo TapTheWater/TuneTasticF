@@ -47,7 +47,7 @@ namespace TuneTastic
             
             checkBox2.Checked = true;  
 
-            Image originalImage = Properties.Resources.passhide; // Replace "icon.png" with your actual image file path or use Properties.Resources.IconName to load from resources
+            Image originalImage = Properties.Resources.passshow; // Replace "icon.png" with your actual image file path or use Properties.Resources.IconName to load from resources
 
             // Resize the image to 20x20 pixels
             Image resizedImage = new Bitmap(20, 15);
@@ -191,7 +191,7 @@ namespace TuneTastic
                 if (checkBox2.Checked == true)
                 {
                     txtPass.PasswordChar = true; // Mask password characters
-                    Image originalImage = Properties.Resources.passhide; // Replace "icon.png" with your actual image file path or use Properties.Resources.IconName to load from resources
+                    Image originalImage = Properties.Resources.passshow; // Replace "icon.png" with your actual image file path or use Properties.Resources.IconName to load from resources
 
                     // Resize the image to 20x20 pixels
                     Image resizedImage = new Bitmap(20, 15);
@@ -212,7 +212,7 @@ namespace TuneTastic
                 else
                 {
                     txtPass.PasswordChar = false; // Show password characters
-                    Image originalImage = Properties.Resources.passshow; // Replace "icon.png" with your actual image file path or use Properties.Resources.IconName to load from resources
+                    Image originalImage = Properties.Resources.passhide; // Replace "icon.png" with your actual image file path or use Properties.Resources.IconName to load from resources
 
                     // Resize the image to 20x20 pixels
                     Image resizedImage = new Bitmap(20, 15);

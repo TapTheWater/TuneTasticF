@@ -37,7 +37,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(307, 117);
+            this.pictureBox1.Location = new System.Drawing.Point(306, 178);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(302, 225);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -49,9 +49,9 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(421, 360);
+            this.label1.Location = new System.Drawing.Point(420, 421);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(73, 32);
+            this.label1.Size = new System.Drawing.Size(58, 26);
             this.label1.TabIndex = 1;
             this.label1.Text = "User";
             // 

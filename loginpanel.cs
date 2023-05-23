@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Drawing;
 using System.Drawing.Drawing2D;
+using System.ComponentModel;
 using System.Linq;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using System.Drawing.Imaging;
+using System.Threading.Tasks;
 
 namespace TuneTastic
 {
@@ -28,7 +30,7 @@ namespace TuneTastic
         {
             checkBox1.Checked = true;
 
-            Image originalImage = Properties.Resources.passhide; // Replace "icon.png" with your actual image file path or use Properties.Resources.IconName to load from resources
+            Image originalImage = Properties.Resources.passshow; // Replace "icon.png" with your actual image file path or use Properties.Resources.IconName to load from resources
 
             // Resize the image to 20x20 pixels
             Image resizedImage = new Bitmap(20, 15);
@@ -82,7 +84,7 @@ namespace TuneTastic
             {
                 string connectionString = "server=localhost;user=root;database=tunetastic;password=;SslMode=None;";
 
-                string query = "SELECT email FROM tb_credentials WHERE (email = @Email AND password = @Password";
+                string query = "SELECT email, username FROM tb_credentials WHERE (email = @Email AND password = @Password)";
 
                 using (MySqlConnection con = new MySqlConnection(connectionString))
                 {
@@ -101,7 +103,13 @@ namespace TuneTastic
                             {
                                 // Email/username and password exist in the database
                                 // Perform the necessary actions or redirect to the next page
+                                string username = string.Empty;
+                                while (reader.Read())
+                                {
+                                    username = reader.GetString("username");
+                                }
                                 MessageBox.Show("You're now logged in.");
+                                
                                 Form1 form1 = new Form1();
                                 form1.Show();
                                 form1.Shown += (s, ev) =>
@@ -152,7 +160,7 @@ namespace TuneTastic
                 if (checkBox1.Checked == true)
                 {
                     txtPass.PasswordChar = true; // Mask password characters
-                    Image originalImage = Properties.Resources.passhide; // Replace "icon.png" with your actual image file path or use Properties.Resources.IconName to load from resources
+                    Image originalImage = Properties.Resources.passshow; // Replace "icon.png" with your actual image file path or use Properties.Resources.IconName to load from resources
 
                     // Resize the image to 20x20 pixels
                     Image resizedImage = new Bitmap(20, 15);
@@ -173,7 +181,7 @@ namespace TuneTastic
                 else
                 {
                     txtPass.PasswordChar = false; // Show password characters
-                    Image originalImage = Properties.Resources.passshow; // Replace "icon.png" with your actual image file path or use Properties.Resources.IconName to load from resources
+                    Image originalImage = Properties.Resources.passhide; // Replace "icon.png" with your actual image file path or use Properties.Resources.IconName to load from resources
 
                     // Resize the image to 20x20 pixels
                     Image resizedImage = new Bitmap(20, 15);

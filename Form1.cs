@@ -10,6 +10,7 @@ using System.Windows.Forms;
 
 namespace TuneTastic
 {
+  
     public partial class Form1 : Form
     {
         
@@ -95,7 +96,7 @@ namespace TuneTastic
 
         private void btn_setting_Click(object sender, EventArgs e)
         {
-            openChildFormInPanel(new favoritepanel());
+            openChildFormInPanel(new settingspanel());
         }
 
         private void panel1_Paint_1(object sender, PaintEventArgs e)
